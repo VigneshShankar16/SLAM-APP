@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SLAM Lifestyle & Fitness Studio • Villivakkam</title>
+    <meta name="description" content="Official Web Portal & App Install for SLAM Villivakkam Fitness Studio. Track workouts, diet plans, and membership passes.">
+    <meta name="theme-color" content="#E50914">
+    <link rel="manifest" href="manifest.json">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-dark: #0B0C10;
+            --surface: #1F2833;
+            --surface-card: #14181F;
+            --crimson: #E50914;
+            --crimson-hover: #b80710;
+            --lime: #CCFF00;
+            --text-main: #FFFFFF;
+            --text-muted: #9BA4B5;
+        }
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Inter', sans-serif;
+        }
+        body {
+            background-color: var(--bg-dark);
+            color: var(--text-main);
+            overflow-x: hidden;
+        }
+        h1, h2, h3, .brand {
+            font-family: 'Space Grotesk', sans-serif;
+            text-transform: uppercase;
+            letter-spacing: -0.5px;
+        }
+        header {
+            background: rgba(11, 12, 16, 0.9);
+            backdrop-filter: blur(12px);
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            border-bottom: 1px solid rgba(255,255,255,0.08);
+            padding: 16px 24px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .logo-area {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        .logo-badge {
+            background: var(--crimson);
+            color: #fff;
+            font-weight: 900;
+            padding: 6px 10px;
+            border-radius: 6px;
+            font-size: 14px;
+            letter-spacing: 1px;
+        }
+        .brand-text {
+            font-size: 18px;
+            font-weight: 800;
+            color: #fff;
+        }
+        .brand-sub {
+            font-size: 11px;
+            color: var(--lime);
+            font-weight: 700;
+            display: block;
+        }
+        .btn-install {
+            background: var(--lime);
+            color: #000;
+            padding: 10px 20px;
+            border-radius: 8px;
+            font-weight: 800;
+            font-size: 13px;
+            text-decoration: none;
+            transition: all 0.2s ease;
+            box-shadow: 0 0 15px rgba(204, 255, 0, 0.3);
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            cursor: pointer;
+            border: none;
+        }
+        .btn-install:hover {
+            transform: translateY(-2px);
+            background: #d8ff33;
+            box-shadow: 0 0 25px rgba(204, 255, 0, 0.5);
+        }
+        .hero {
+            padding: 140px 24px 80px;
+            max-width: 1200px;
+            margin: 0 auto;
+            text-align: center;
+            background: radial-gradient(circle at 50% 20%, rgba(229, 9, 20, 0.15) 0%, transparent 60%);
+        }
+        .hero-tag {
+            display: inline-block;
+            background: rgba(229, 9, 20, 0.15);
+            color: var(--crimson);
+            border: 1px solid var(--crimson);
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 700;
+            margin-bottom: 24px;
+        }
+        .hero h1 {
+            font-size: clamp(36px, 6vw, 68px);
+            font-weight: 900;
+            line-height: 1.05;
+            margin-bottom: 20px;
+            background: linear-gradient(180deg, #FFFFFF 0%, #B0B8C4 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .hero p {
+            font-size: clamp(16px, 2vw, 20px);
+            color: var(--text-muted);
+            max-width: 680px;
+            margin: 0 auto 40px;
+            line-height: 1.6;
+        }
+        .action-buttons {
+            display: flex;
+            gap: 16px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        .btn-primary {
+            background: var(--crimson);
+            color: #fff;
+            padding: 16px 32px;
+            border-radius: 12px;
+            font-weight: 800;
+            font-size: 16px;
+            text-decoration: none;
+            transition: all 0.2s;
+            box-shadow: 0 8px 25px rgba(229, 9, 20, 0.4);
+            border: none;
+            cursor: pointer;
+        }
+        .btn-primary:hover {
+            background: var(--crimson-hover);
+            transform: translateY(-2px);
+        }
+        .btn-secondary {
+            background: rgba(255,255,255,0.05);
+            color: #fff;
+            border: 1px solid rgba(255,255,255,0.15);
+            padding: 16px 32px;
+            border-radius: 12px;
+            font-weight: 700;
+            font-size: 16px;
+            text-decoration: none;
+            transition: all 0.2s;
+        }
+        .btn-secondary:hover {
+            background: rgba(255,255,255,0.1);
+            border-color: rgba(255,255,255,0.3);
+        }
+        .section {
+            padding: 80px 24px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .section-title {
+            font-size: 32px;
+            font-weight: 800;
+            text-align: center;
+            margin-bottom: 12px;
+        }
+        .section-subtitle {
+            text-align: center;
+            color: var(--text-muted);
+            margin-bottom: 48px;
+            font-size: 16px;
+        }
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1f));
+            gap: 24px;
+        }
+        .card {
+            background: var(--surface-card);
+            border: 1px solid rgba(255,255,255,0.08);
+            border-radius: 16px;
+            padding: 28px;
+            transition: all 0.3s ease;
+        }
+        .card:hover {
+            border-color: rgba(204, 255, 0, 0.4);
+            transform: translateY(-4px);
+        }
+        .card-icon {
+            font-size: 32px;
+            margin-bottom: 16px;
+        }
+        .card h3 {
+            font-size: 20px;
+            margin-bottom: 12px;
+            color: var(--lime);
+        }
+        .card p {
+            color: var(--text-muted);
+            line-height: 1.6;
+            font-size: 14px;
+        }
+        .schedule-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 16px;
+        }
+        .schedule-card {
+            background: var(--surface);
+            padding: 20px;
+            border-radius: 12px;
+            border-left: 4px solid var(--crimson);
+        }
+        .schedule-day {
+            font-size: 12px;
+            color: var(--lime);
+            font-weight: 800;
+            margin-bottom: 6px;
+            text-transform: uppercase;
+        }
+        .schedule-title {
+            font-size: 16px;
+            font-weight: 700;
+            margin-bottom: 4px;
+        }
+        .schedule-desc {
+            font-size: 13px;
+            color: var(--text-muted);
+        }
+        .bmi-box {
+            background: var(--surface-card);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 20px;
+            padding: 36px;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        .input-group {
+            margin-bottom: 20px;
+        }
+        .input-group label {
+            display: block;
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: var(--text-muted);
+        }
+        .input-group input {
+            width: 100%;
+            padding: 14px;
+            background: rgba(0,0,0,0.4);
+            border: 1px solid rgba(255,255,255,0.15);
+            border-radius: 10px;
+            color: #fff;
+            font-size: 16px;
+        }
+        .input-group input:focus {
+            outline: none;
+            border-color: var(--lime);
+        }
+        #bmiResult {
+            margin-top: 24px;
+            padding: 20px;
+            border-radius: 12px;
+            background: rgba(204, 255, 0, 0.1);
+            border: 1px solid var(--lime);
+            text-align: center;
+            display: none;
+        }
+        footer {
+            border-top: 1px solid rgba(255,255,255,0.08);
+            padding: 40px 24px;
+            text-align: center;
+            color: var(--text-muted);
+            font-size: 14px;
+            margin-top: 80px;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo-area">
+            <div class="logo-badge">SLAM</div>
+            <div>
+                <span class="brand-text">VILLIVAKKAM</span>
+                <span class="brand-sub">FITNESS STUDIO</span>
+            </div>
+        </div>
+        <button class="btn-install" onclick="alert('To install app:\n\n1. On Android: Click ⋮ menu in Chrome and choose Add to Home screen.\n2. Or download the APK directly from GitHub Actions tab!')">
+            📲 INSTALL APP
+        </button>
+    </header>
+
+    <div class="hero">
+        <span class="hero-tag">🔥 OFFICIAL WEB PORTAL & NATIVE APP</span>
+        <h1>TRANSFORM YOUR BODY AT SLAM VILLIVAKKAM</h1>
+        <p>Access your personalized 5-Day workout routines, customized diet nutrition plans, interactive BMI tracker, and digital club entry pass anywhere on web or mobile.</p>
+        
+        <div class="action-buttons">
+            <a href="https://github.com/VigneshShankar16/SLAM-APP/actions" target="_blank" class="btn-primary">📥 DOWNLOAD ANDROID APK</a>
+            <a href="#schedule" class="btn-secondary">⚡ VIEW SCHEDULE</a>
+        </div>
+    </div>
+
+    <div class="section" id="features">
+        <h2 class="section-title">EXCLUSIVE MEMBER FEATURES</h2>
+        <p class="section-subtitle">Designed specifically for members of SLAM Lifestyle & Fitness Studio Villivakkam</p>
+        
+        <div class="grid">
+            <div class="card">
+                <div class="card-icon">🏋️‍♂️</div>
+                <h3>5-Day Split Routines</h3>
+                <p>Structured science-backed workout plans covering Chest/Triceps, Back/Biceps, Shoulders/Abs, Leg Day, and HIIT Cardio conditioning.</p>
+            </div>
+            <div class="card">
+                <div class="card-icon">🥗</div>
+                <h3>Personalized Nutrition</h3>
+                <p>Tailored vegetarian and non-vegetarian muscle gain and fat loss macro plans crafted by Master Trainer Vikram.</p>
+            </div>
+            <div class="card">
+                <div class="card-icon">🪪</div>
+                <h3>Digital Club Gate Pass</h3>
+                <p>No physical card required. Present your dynamic QR code at the Villivakkam automated reception turnstile for instant check-in.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="section" id="schedule">
+        <h2 class="section-title">WEEKLY WORKOUT MATRIX</h2>
+        <p class="section-subtitle">SLAM Villivakkam Standard Hypertrophy Program</p>
+        
+        <div class="schedule-grid">
+            <div class="schedule-card">
+                <div class="schedule-day">Monday</div>
+                <div class="schedule-title">Chest & Triceps</div>
+                <div class="schedule-desc">Incline Dumbbell Press, Cable Flys, Skull Crushers</div>
+            </div>
+            <div class="schedule-card">
+                <div class="schedule-day">Tuesday</div>
+                <div class="schedule-title">Back & Biceps</div>
+                <div class="schedule-desc">Lat Pulldowns, Barbell Rows, Hammer Curls</div>
+            </div>
+            <div class="schedule-card">
+                <div class="schedule-day">Wednesday</div>
+                <div class="schedule-title">Shoulders & Abs</div>
+                <div class="schedule-desc">Overhead Press, Lateral Raises, Hanging Leg Raises</div>
+            </div>
+            <div class="schedule-card">
+                <div class="schedule-day">Thursday</div>
+                <div class="schedule-title">Legs & Calves</div>
+                <div class="schedule-desc">Barbell Squats, Romanian Deadlifts, Leg Extensions</div>
+            </div>
+            <div class="schedule-card">
+                <div class="schedule-day">Friday</div>
+                <div class="schedule-title">HIIT & Core</div>
+                <div class="schedule-desc">Battle Ropes, Kettlebell Swings, Treadmill Sprints</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2 class="section-title">LIVE BMI & MACRO TRACKER</h2>
+        <p class="section-subtitle">Calculate your fitness metrics instantly</p>
+        
+        <div class="bmi-box">
+            <div class="input-group">
+                <label>Weight (in kg)</label>
+                <input type="number" id="weight" placeholder="e.g. 75">
+            </div>
+            <div class="input-group">
+                <label>Height (in cm)</label>
+                <input type="number" id="height" placeholder="e.g. 175">
+            </div>
+            <button class="btn-primary" style="width: 100%; margin-top: 10px;" onclick="calculateBMI()">CALCULATE MY SCORE</button>
+            
+            <div id="bmiResult">
+                <h3 id="bmiValue" style="color: var(--lime); font-size: 28px; margin-bottom: 4px;">--</h3>
+                <p id="bmiCategory" style="font-weight: 700; color: #fff;">--</p>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>© 2026 SLAM Lifestyle & Fitness Studio • Villivakkam Branch HQ, Chennai.</p>
+        <p style="margin-top: 8px; font-size: 12px;">App Developed by Vignesh Shankar • Powered by Google AI Studio</p>
+    </footer>
+
+    <script>
+        function calculateBMI() {
+            const weight = parseFloat(document.getElementById('weight').value);
+            const height = parseFloat(document.getElementById('height').value) / 100;
+            
+            if (weight > 0 && height > 0) {
+                const bmi = (weight / (height * height)).toFixed(1);
+                let category = '';
+                
+                if (bmi < 18.5) category = 'Underweight • Focus on Caloric Surplus & Strength';
+                else if (bmi < 24.9) category = 'Optimal Fitness Range • Maintain Hypertrophy';
+                else if (bmi < 29.9) category = 'Overweight • Add HIIT Cardio & Calorie Deficit';
+                else category = 'High Risk • Consult Trainer Vikram for Fat Loss Plan';
+                
+                document.getElementById('bmiValue').innerText = 'BMI: ' + bmi;
+                document.getElementById('bmiCategory').innerText = category;
+                document.getElementById('bmiResult').style.display = 'block';
+            } else {
+                alert('Please enter valid weight and height.');
+            }
+        }
+    </script>
+</body>
+</html>
