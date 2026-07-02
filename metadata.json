@@ -1,0 +1,7 @@
+{
+  "name": "GYM SLAM",
+  "description": "Smart Gym Membership Pass, Interactive Workout Guide with Trajectory Line Animations, Weight & Calorie Tracking, and Customized Fitness Diet Plans",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
+
